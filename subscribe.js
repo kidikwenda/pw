@@ -13,6 +13,7 @@ async function subscribe(){
         userVisibleOnly: true,
         applicationServerKey: 'BHZo8rRfx4OpFz2OfGxhgqMINqOb8PdqvB9Q65XeQXZkKD6AgHW6iNyDBtyk8vr2h7G--eGCiYigbNew-dkd3Xw'
     })
+    
     db.insert(push.endpoint, push.keys.p256dh, push.keys.auth);
     //console.log(JSON.stringify(push))
 }
