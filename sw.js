@@ -1,4 +1,4 @@
-self.addEventListener('push', (e) => {
+self.addEventListener('push', function(e) {
     var options = {
         body: 'Notificação gerada através de push',
         icon: './push_logo.png',
@@ -21,6 +21,6 @@ self.addEventListener('push', (e) => {
         ]
     };
     e.waitUntil(
-        self.registration.showNotification('teste message', options)
+        self.registration.showNotification('teste de mensagem com push!', options)
     );
 });
