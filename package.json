@@ -1,0 +1,9 @@
+{
+  "name": "push-notifications",
+  "version": "1.0.0",
+  "description": "first-push-notifications-app",
+  "author": "Adilson Quifucussa",
+  "dependencies": {
+    "sqlite3": "^4.1.1"
+  }
+}

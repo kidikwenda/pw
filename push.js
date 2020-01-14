@@ -1,4 +1,5 @@
 var push = require('web-push')
+const db = require('./bd.js');
 
 //let vapidKeys = push.generateVAPIDKeys();
 let vapidKeys = {
@@ -15,3 +16,14 @@ let sub = {
         auth:"hbqnKIk8brWZDV3FhnVosQ"}};
 
 push.sendNotification(sub, 'teste de mensagem')
+
+var clientes = db.selectAll();
+
+clientes.forEach(element => {
+    let sub = {
+        endpoint:element.endpoint,
+        keys :{
+            p256dh:element.p256dh,
+            auth:element.auth}};
+    push.sendNotification(sub, 'teste de mensagem para vários clientes')
+});
