@@ -8,5 +8,6 @@ let vapidKeys = {
 
 push.setVapidDetails('mailto:kidikwenda@gmail.com', vapidKeys.publicKey, vapidKeys.privateKey)
 
-let subsc
+let sub = {}
+
 push.sendNotification(sub, 'test message')
