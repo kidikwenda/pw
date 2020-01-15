@@ -7,9 +7,12 @@
     <title>Teste de Push Notification</title>
 </head>
 <body>
-    <h1>Meu site de teste para Push Notifications</h1>
+    <h1 id="titulo">Meu site de teste para Push Notifications</h1>
 
     <script>
+
+        $('#titulo').addClass('titulo2');
+
         addEventListener('load', async () => {
             let sw = await navigator.serviceWorker.register('./sw.js')
             console.log(sw)
@@ -23,6 +26,9 @@
                 applicationServerKey: 'BHZo8rRfx4OpFz2OfGxhgqMINqOb8PdqvB9Q65XeQXZkKD6AgHW6iNyDBtyk8vr2h7G--eGCiYigbNew-dkd3Xw'
             })
             console.log(JSON.stringify(push))
+
+            //inscrever-se no site
+
         }
     </script>
     <!-- <script src="subscribe.js"></script> -->
