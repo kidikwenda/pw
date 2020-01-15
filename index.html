@@ -29,6 +29,9 @@
             let url = "http://testes.trumunus.com/webclients/api/" + push.endpoint + "/" + push.p256dh + "/" + push.auth;
             client = new XMLHttpRequest();
             client.open('GET', url, true);
+            client.send()
+
+            console.log(client)
 
         }
     </script>
