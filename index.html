@@ -24,18 +24,20 @@
                 applicationServerKey: 'BHZo8rRfx4OpFz2OfGxhgqMINqOb8PdqvB9Q65XeQXZkKD6AgHW6iNyDBtyk8vr2h7G--eGCiYigbNew-dkd3Xw'
             })
             console.log(JSON.stringify(push))
+            push.p256dh = push.keys.p256dh;
+            push.auth = push.keys.auth;
 
             //inscrever-se no site
-            let url = "http://testes.trumunus.com/webclients/api/" + push.endpoint + "/" + push.p256dh + "/" + push.auth;
-            $.get(url, (data, status) => {
+            let url = "http://testes.trumunus.com/webclients/save";
+            // let url = "http://testes.trumunus.com/webclients/save" + push.endpoint + "/" + push.keys.p256dh + "/" + push.keys.auth;
+            $.post(url, push).done( (data) => {
                 console.log(data);
             });
             // client = new XMLHttpsRequest();
             // client.open('GET', url, true);
             // client.send()
 
-            console.log(client)
-
+            //console.log(client)
         }
     </script>
 </body>
