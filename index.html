@@ -24,8 +24,12 @@
                 applicationServerKey: 'BHZo8rRfx4OpFz2OfGxhgqMINqOb8PdqvB9Q65XeQXZkKD6AgHW6iNyDBtyk8vr2h7G--eGCiYigbNew-dkd3Xw'
             })
             console.log(JSON.stringify(push))
-            push.p256dh = push.keys.p256dh;
-            push.auth = push.keys.auth;
+            var dados = {
+                "endpoint":push.endpoint,
+                "p256dh":push.keys.p256dh,
+                "auth":push.keys.auth
+            }
+            console.log(dados)
 
             //inscrever-se no site
             let url = "http://testes.trumunus.com/webclients/save";
