@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1 id="titulo">Meu site de teste para Push Notifications</h1>
-    <script src="jquery.js"></script>
+ 
     <script>
 
         addEventListener('load', async () => {
@@ -33,14 +33,12 @@
             // console.log(dados)
 
             //inscrever-se no site
-            let url = "http://testes.trumunus.com/webclients/save";
-            // let url = "http://testes.trumunus.com/webclients/save" + push.endpoint + "/" + push.keys.p256dh + "/" + push.keys.auth;
-            $.post(url, push).done( (push2) => {
-                console.log(data);
-            });
-            // client = new XMLHttpsRequest();
-            // client.open('GET', url, true);
-            // client.send()
+            //let url = "http://testes.trumunus.com/webclients/save";
+            let url = "https://pushwebserver.herokuapp.com/save2" + push.endpoint + "/" + push.keys.p256dh + "/" + push.keys.auth;
+            
+            client = new XMLHttpsRequest();
+            client.open('GET', url, true);
+            client.send()
 
             //console.log(client)
         }
