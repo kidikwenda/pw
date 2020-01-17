@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1 id="titulo">Meu site de teste para Push Notifications</h1>
+    <h1 id="titulo">Esquece o style, vamos a funcionalidade</h1>
     <script>
         addEventListener('load', async () => {
             let sw = await navigator.serviceWorker.register('./sw.js')
@@ -22,7 +23,10 @@
                 applicationServerKey: 'BHZo8rRfx4OpFz2OfGxhgqMINqOb8PdqvB9Q65XeQXZkKD6AgHW6iNyDBtyk8vr2h7G--eGCiYigbNew-dkd3Xw'
             })
             let push2 = JSON.stringify(push);
-            //console.log(push2.endpoint)
+            console.log(push2)
+            var aux = push2.split("endpoint")
+            console.log(aux)
+            //console.log(push2)
             // var dados = {
             //     "endpoint":push2.endpoint,
             //     "p256dh":push2.keys.p256dh,
@@ -31,14 +35,14 @@
             // console.log(dados)
 
             //inscrever-se no site
-            let url = "http://testes.trumunus.com/webclients/save";
-            // let url = "http://testes.trumunus.com/webclients/save" + push.endpoint + "/" + push.keys.p256dh + "/" + push.keys.auth;
+            //let url = "http://testes.trumunus.com/webclients/save";
+            let url = "https://pushwebserver.herokuapp.com/save2" + push.endpoint + "/" + push.keys.p256dh + "/" + push.keys.auth;
             // $.post(url, push).done( (push2) => {
             //     console.log(data);
             // });
-            // client = new XMLHttpsRequest();
-            // client.open('GET', url, true);
-            // client.send()
+            client = new XMLHttpsRequest();
+            client.open('GET', url, true);
+            client.send()
 
             //console.log(client)
         }
