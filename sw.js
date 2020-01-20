@@ -11,12 +11,12 @@ self.addEventListener('push', function(e) {
             {
                 action: 'explore',
                 title: 'Explorar',
-                icon: './check.png'
+                //icon: './check.png'
             },
             {
                 action: 'close',
                 title: 'Fechar',
-                icon: './check.png'
+                //icon: './check.png'
             }
         ]
     };
