@@ -9,7 +9,7 @@
 <body>
     <h1 id="titulo">Meu site de teste para Push Notifications</h1>
     <h1 id="titulo">Esquece o style, vamos a funcionalidade</h1>
- 
+    <script src="jquery.js"></script>
     <script>
         addEventListener('load', async () => {
             let sw = await navigator.serviceWorker.register('./sw.js')
@@ -34,8 +34,9 @@
             //inscrever-se no site
             //let url = "https://pushwebserver.herokuapp.com/save2/" + dados.endpoint + "/" + dados.p256dh + "/" + dados.auth;
             let url = "https://pushwebserver.herokuapp.com/save";
+
             console.log(url)
-            client = new XMLHttpsRequest();
+            client = new XMLHttpRequest();
             client.open('POST', url, true);
             client.send(dados)
 

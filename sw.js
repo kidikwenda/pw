@@ -1,6 +1,6 @@
 self.addEventListener('push', function(e) {
     var options = {
-        body: 'Notificação gerada através de push',
+        body: e.body,
         icon: './push_logo.png',
         vibrate: [100, 50, 100],
         data: {
