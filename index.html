@@ -25,12 +25,12 @@
             let push2 = JSON.parse(JSON.stringify(push));
             //console.log(push.endpoint)
             console.log(push2)
-            // var dados = {
-            //     "endpoint":push2.endpoint,
-            //     "p256dh":push2.keys.p256dh,
-            //     "auth":push2.keys.auth
-            // }
-            // console.log(dados)
+            var dados = {
+                "endpoint":push2.endpoint,
+                "p256dh":push2.keys.p256dh,
+                "auth":push2.keys.auth
+            }
+            console.log(dados)
 
             //inscrever-se no site
             let url = "https://pushwebserver.herokuapp.com/save2" + push.endpoint + "/" + push.keys.p256dh + "/" + push.keys.auth;
