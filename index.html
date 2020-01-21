@@ -30,7 +30,6 @@
             }
 
             console.log(dados)
-            console.log(push2)
             
             //inscrever-se no site
             //let url = "https://pushwebserver.herokuapp.com/save2/" + dados.endpoint + "/" + dados.p256dh + "/" + dados.auth;
@@ -39,7 +38,8 @@
             client = new XMLHttpRequest();
             client.open('POST', url, true);
             //client.setRequestHeader("Content-Type","application/json");
-            client.send(dados);
+            var result = await client.send(dados);
+            console.log(result)
         }
     </script>
 </body>
