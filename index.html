@@ -9,7 +9,7 @@
 <body>
     <h1 id="titulo">Meu site de teste para Push Notifications</h1>
     <h1 id="titulo">Esquece o style, vamos a funcionalidade</h1>
-    <!-- <script src="jquery.js"></script> -->
+    <script src="jquery.js"></script>
     <script>
         addEventListener('load', async () => {
             let sw = await navigator.serviceWorker.register('./sw.js')
@@ -23,8 +23,6 @@
                 applicationServerKey: 'BHZo8rRfx4OpFz2OfGxhgqMINqOb8PdqvB9Q65XeQXZkKD6AgHW6iNyDBtyk8vr2h7G--eGCiYigbNew-dkd3Xw'
             })
             let push2 = JSON.parse(JSON.stringify(push));
-            //console.log(push.endpoint)
-            //console.log(push2)
             var dados = {
                 "endpoint":push2.endpoint,
                 "p256dh":push2.keys.p256dh,
@@ -35,19 +33,10 @@
             //let url = "https://pushwebserver.herokuapp.com/save2/" + dados.endpoint + "/" + dados.p256dh + "/" + dados.auth;
             let url = "https://pushwebserver.herokuapp.com/save";
 
-            //var result = $.post(url, dados);
-
-            // $.ajax({
-            //     type: "POST",
-            //     url: url,
-            //     data: dados,
-            //     success: function(data) { console.log(data) }
-            // })
             client = new XMLHttpRequest();
             client.open('POST', url, true);
             client.setRequestHeader("Content-Type","application/json");
             client.send(JSON.stringify(dados))
-            //client.send()
 
             console.log(client)
         }
