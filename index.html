@@ -46,10 +46,10 @@
             client = new XMLHttpRequest();
             client.open('POST', url, true);
             client.setRequestHeader("Content-Type","application/json");
-            client.send(dados)
+            client.send(JSON.stringify(dados))
             //client.send()
 
-            console.log(result)
+            console.log(client)
         }
     </script>
 </body>
