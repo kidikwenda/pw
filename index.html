@@ -43,10 +43,10 @@
             //     data: dados,
             //     success: function(data) { console.log(data) }
             // })
-            // client = new XMLHttpRequest();
-            // client.open('GET', url, true);
-            //client.setRequestHeader("Content-Type","application/json");
-            //client.send(dados)
+            client = new XMLHttpRequest();
+            client.open('POST', url, true);
+            client.setRequestHeader("Content-Type","application/json");
+            client.send(dados)
             //client.send()
 
             console.log(result)
