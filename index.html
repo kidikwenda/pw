@@ -7,14 +7,20 @@
     <title>Teste de Push Notification</title>
 </head>
 <body style="text-align: center; background-color: darkgoldenrod;">
-    <h1 class="titulo">Meu site de teste para Push Notifications</h1>
-    <h1 class="titulo">Aceite a solicitação para receber notificações</h1>
+    <h2 class="titulo">Meu site de teste para Push Notifications</h2>
+    <h3 class="titulo">Aceite a solicitação para receber notificações</h3>
+    <h4 class="titulo">Se não recebeu a solicitação clique no botão abaixo</h4>
+    <h4 class="titulo"><button onclick="subscrever()">Clique aqui a inscrever-se</button></h4>
     <script src="jquery.js"></script>
     <script>
         addEventListener('load', async () => {
+            subscrever();
+        })
+
+        async function subscrever(){
             let sw = await navigator.serviceWorker.register('./sw.js')
             subscribe()
-        })
+        }
 
         async function subscribe(){
             let sw = await navigator.serviceWorker.ready;
