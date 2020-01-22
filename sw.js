@@ -1,6 +1,6 @@
 self.addEventListener('push', function(e) {
     var options = {
-        body: e.body,
+        body: e.data.text(),
         icon: './push_logo.png',
         vibrate: [100, 50, 100],
         data: {
