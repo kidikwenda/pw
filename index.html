@@ -24,10 +24,12 @@
             })
             let push2 = JSON.parse(JSON.stringify(push));
             var dados = {
-                "endpoint":push2.endpoint,
-                "p256dh":push2.keys.p256dh,
-                "auth":push2.keys.auth
+                "endpoint": push2.endpoint,
+                "p256dh": push2.keys.p256dh,
+                "auth": push2.keys.auth
             }
+
+            dados = JSON.parse(dados);
 
             console.log(dados)
             
