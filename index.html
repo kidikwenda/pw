@@ -30,8 +30,6 @@
             }
 
             dados = JSON.stringify(dados)
-
-            console.log(dados)
             
             //inscrever-se no site
             let url = "https://pushwebserver.herokuapp.com/save";
@@ -43,9 +41,9 @@
                 //result = JSON.parse(client.responseText);
                 if(client.readyState == 4 && client.status == '200'){
                     //console.log("result: " + result);
-                    console.log("client.responseText: " + client.responseText);
+                    //console.log("client.responseText: " + client.responseText);
                 } else {
-                    console.log("error: " + result);
+                    //console.log("error: " + result);
                 }
             }
             
