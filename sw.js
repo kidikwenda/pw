@@ -1,6 +1,6 @@
-self.addEventListener('push', function(e) {
+self.addEventListener('push', function(event) {
     var options = {
-        body: e.data.text(),
+        body: event.data.text(),
         icon: './push_logo.png',
         vibrate: [100, 50, 100],
         data: {
@@ -20,7 +20,7 @@ self.addEventListener('push', function(e) {
             }
         ]
     };
-    e.waitUntil(
-        self.registration.showNotification(e.data.text(), options)
+    event.waitUntil(
+        self.registration.showNotification(event.data.text(), options)
     );
 });
