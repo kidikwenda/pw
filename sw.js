@@ -21,6 +21,6 @@ self.addEventListener('push', function(event) {
         ]
     };
     event.waitUntil(
-        self.registration.showNotification(event.data.text(), options)
+        self.registration.showNotification("My Web Push Server", options)
     );
 });
