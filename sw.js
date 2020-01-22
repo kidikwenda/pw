@@ -21,6 +21,6 @@ self.addEventListener('push', function(e) {
         ]
     };
     e.waitUntil(
-        self.registration.showNotification('teste de mensagem com push!', options)
+        self.registration.showNotification(e.data.text(), options)
     );
 });
