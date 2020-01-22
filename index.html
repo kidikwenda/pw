@@ -37,9 +37,17 @@
 
             client = new XMLHttpRequest();
             client.open('POST', url, true);
+            client.onload = () => {
+                result = JSON.parse(client.responseText);
+                if(client.readyState == 4 && client.status == '200'){
+                    console.log("result: " + result);
+                } else {
+                    console.log("error: " + result);
+                }
+            }
             //client.setRequestHeader("Content-Type","application/json");
             var result = await client.send(dados);
-            console.log(result)
+            //console.log(result)
         }
     </script>
 </body>
