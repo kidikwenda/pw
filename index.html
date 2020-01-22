@@ -41,6 +41,7 @@
                 result = JSON.parse(client.responseText);
                 if(client.readyState == 4 && client.status == '200'){
                     console.log("result: " + result);
+                    console.log("client.responseText: " + client.responseText);
                 } else {
                     console.log("error: " + result);
                 }
